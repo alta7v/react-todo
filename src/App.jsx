@@ -55,7 +55,12 @@ export const App = () => {
         text={todoText}
         onChange={onChangeTodoText}
         onClick={onClickAdd}
+        disabled={5 <= incompleteTodos.length}
       />
+
+      {5 <= incompleteTodos.length && (
+        <p style={{ color: "red" }}>登録できるTODOの上限に達しました</p>
+      )}
 
       <IncompleteTodos
         todos={incompleteTodos}

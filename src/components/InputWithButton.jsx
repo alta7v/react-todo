@@ -10,11 +10,18 @@ const style = {
 };
 
 export const InputWithButton = (props) => {
-  const { placeholder, text, onChange, onClick } = props;
+  const { placeholder, text, onChange, onClick, disabled } = props;
   return (
     <div style={style}>
-      <input placeholder={placeholder} value={text} onChange={onChange} />
-      <button onClick={onClick}>追加</button>
+      <input
+        disabled={disabled}
+        placeholder={placeholder}
+        value={text}
+        onChange={onChange}
+      />
+      <button disabled={disabled} onClick={onClick}>
+        追加
+      </button>
     </div>
   );
 };
